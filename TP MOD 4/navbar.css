@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.nav {
+    position: fixed;
+    color: white;
+    background-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+}
+
+.nav h2 {
+    padding: 20px;
+}
+
+.nav ul  {
+    padding: 20px;
+    display: flex;
+    list-style: none;
+}
+
+.nav a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color: blue;
+    transition: all .5s;
+}
+
+.layout h2 {
+    margin-top: 80px;
+}
+
+.box-tommie {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    width: 100%;
+    height: 80vh;
+    border-radius: 20px;
+}
+.box-tommie img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.text-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.text-wrapper h1, .text-wrapper h2 {
+    color: tomato;
+    margin: 0;
+    margin-left: 30px;
+}
+
+.collection-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.collection-card .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    width: calc(25% - 20px);
+}
+
+.collection-card .card img {
+    border-radius: 20px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+
+}
+
+.collection-card .card h2 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .collection-card .card {
+        width: calc(50% - 20px);
+    }
+}
