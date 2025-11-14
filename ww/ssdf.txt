@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tampilan Data</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 400px; margin: auto; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Tampilan Data</h2>
+
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $name = htmlspecialchars(trim($_POST["name"] ?? ''));
+            $tanggal = trim($_POST["tanggal_lahir"] ?? '');
+            $hobby = $_POST["hobby"] ?? [];
+
+                $tanggal_format = date("d F Y", strtotime($tanggal));
+                $hobby_list = implode(", ", array_map('htmlspecialchars', $hobby));
+                ?>
+                    <p><strong>Nama Lengkap:</strong> <?= $name ?></p>
+                    <p><strong>Tanggal Lahir:</strong> <?= $tanggal_format ?></p>
+                    <p><strong>Hobi:</strong> <?= $hobby_list ?></p>
+                <?php
+        } else {
+            echo "<p>Data tidak dikirim.</p>";
+        }
+        ?>
+
+        <a href="form.php">Kembali ke halaman</a>
+    </div>
+</body>
+</html>
